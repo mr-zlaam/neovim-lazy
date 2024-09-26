@@ -13,6 +13,7 @@ return {
           ".vscode/",
           "%.log$",
           "%.tmp$",
+          "vendor",
         },
       },
     })
