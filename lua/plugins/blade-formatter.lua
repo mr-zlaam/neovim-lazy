@@ -1,0 +1,3 @@
+return {
+  "shufo/blade-formatter",
+}

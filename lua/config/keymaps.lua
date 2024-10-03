@@ -1,4 +1,5 @@
 -- set leader key to space
+--
 vim.g.mapleader = " "
 
 local keymap = vim.keymap -- for conciseness
@@ -35,3 +36,22 @@ vim.api.nvim_set_keymap("n", "dd", '"_dd', { noremap = true, silent = true })
 -- Define the delete operation in visual mode to not use the clipboard
 vim.api.nvim_set_keymap("x", "d", '"_d', { noremap = true, silent = true })
 -- Key mappings for vim-visual-multi
+---------------------
+-- Remove Mappings --
+---------------------
+-- Function to safely delete a mapping
+local function safe_del(mode, lhs)
+  local mappings = vim.api.nvim_get_keymap(mode)
+  for _, mapping in ipairs(mappings) do
+    if mapping.lhs == lhs then
+      keymap.del(mode, lhs, { silent = true })
+      return
+    end
+  end
+end
+
+-- Unmap Ctrl + j and Ctrl + k in all modes
+for _, mode in ipairs({ "n", "i", "v" }) do
+  safe_del(mode, "<C-j>")
+  safe_del(mode, "<C-k>")
+end
