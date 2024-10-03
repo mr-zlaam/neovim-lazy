@@ -8,3 +8,7 @@ vim.cmd("highlight NonText guibg=NONE ctermbg=NONE")
 vim.cmd("highlight LineNr guibg=NONE ctermbg=NONE")
 vim.cmd("highlight EndOfBuffer guibg=NONE ctermbg=NONE")
 vim.cmd("highlight VertSplit guibg=NONE ctermbg=NONE")
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "*",
+  command = "setlocal formatoptions-=cro",
+})
