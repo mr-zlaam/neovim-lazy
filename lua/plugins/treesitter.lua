@@ -2,7 +2,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
-      ensure_installed = { "svelte", "astro", "javascript", "typescript", "html", "css" },
+      ensure_installed = { "svelte", "astro", "javascript", "typescript", "html", "css", "prisma" },
       highlight = { enable = true },
     },
   },
