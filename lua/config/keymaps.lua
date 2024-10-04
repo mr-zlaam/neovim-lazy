@@ -35,4 +35,3 @@ vim.api.nvim_set_keymap("n", "dd", '"_dd', { noremap = true, silent = true })
 -- In your init.lua or another configuration file
 -- Define the delete operation in visual mode to not use the clipboard
 vim.api.nvim_set_keymap("x", "d", '"_d', { noremap = true, silent = true })
--- Key mappings for vim-visual-multi
