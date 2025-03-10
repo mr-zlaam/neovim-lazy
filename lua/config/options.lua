@@ -12,3 +12,4 @@ vim.api.nvim_create_autocmd("BufEnter", {
   pattern = "*",
   command = "setlocal formatoptions-=cro",
 })
+vim.g.snacks_animate = false
